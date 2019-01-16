@@ -57,7 +57,7 @@ sap.ui.define([
 					}
 				]
 			};
-			ContentDao.set(sideContent);
+			ContentDao.getInstance().set(sideContent);
 		},
 
 		onItemSelect: function(oEvent) {

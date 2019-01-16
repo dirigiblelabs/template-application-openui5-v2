@@ -2,7 +2,7 @@ sap.ui.define([], function() {
 	"use strict";
 
 	var MAIN_VIEW;
-	var SIDE_VIEW;
+	var BOOKS_VIEW;
 
 	return {
 		getMainView: function() {
@@ -11,11 +11,11 @@ sap.ui.define([], function() {
 		setMainView: function(view) {
 			MAIN_VIEW = view;
 		},
-		getSideView: function() {
-			return SIDE_VIEW;
+		getBooksView: function() {
+			return BOOKS_VIEW;
 		},
-		setSideView: function(view) {
-			SIDE_VIEW = view;
+		setBooksView: function(view) {
+			BOOKS_VIEW = view;
 		}
 	};
 });

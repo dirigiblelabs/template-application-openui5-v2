@@ -12,15 +12,14 @@ sap.ui.define([
 		}
 	}
 
-	return {
-		getInstance: function(modelName) {
-			return {
+	function getDao(view, modelName) {
+		return {
 				list: function() {
-					var entities = Models.getData(ViewUtils.getMainView(), modelName);
+					var entities = Models.getData(view, modelName);
 					return ObjectUtils.isNotNull(entities) ? entities : [];
 				},
 				get: function(id) {
-					var entities = this.list(ViewUtils.getMainView(), modelName);
+					var entities = this.list(view, modelName);
 					for (var i = 0; i < entities.length; i ++) {
 						if (entities[i].id === id) {
 							return entities[i];
@@ -29,7 +28,7 @@ sap.ui.define([
 					return null;
 				},
 				add: function(entity) {
-					var entities = this.list(ViewUtils.getMainView(), modelName);
+					var entities = this.list(view, modelName);
 					setId(entity);
 					entities.push(entity);
 					this.set(entities);
@@ -38,10 +37,10 @@ sap.ui.define([
 					for (var i = 0; ObjectUtils.isNotNull(entities) && i < entities.length; i ++) {
 						setId(entities[i]);
 					}
-					Models.setData(ViewUtils.getMainView(), modelName, entities);
+					Models.setData(view, modelName, entities);
 				},
 				update: function (id, entity) {
-					var entities = this.list(ViewUtils.getMainView(), modelName);
+					var entities = this.list(view, modelName);
 					for (var i = 0; i < entities.length; i ++) {
 						if (entities[i].id === id) {
 							setId(entity);
@@ -52,7 +51,7 @@ sap.ui.define([
 					this.set(entities);
 				},
 				remove: function(id) {
-					var entities = this.list(ViewUtils.getMainView(), modelName);
+					var entities = this.list(view, modelName);
 					for (var i = 0; i < entities.length; i ++) {
 						if (entities[i].id === id) {
 							entities.splice(i, 1);
@@ -68,6 +67,11 @@ sap.ui.define([
 					return ObjectUtils.isNotNull(this.get(id));
 				}
 			};
+	}
+
+	return {
+		getInstance: function(modelName) {
+			return getDao(ViewUtils.getMainView(), modelName);
 		}
 	};
 });

@@ -1,8 +1,7 @@
 sap.ui.define([
-	"cockpit2/data/dao/AbstractDao",
-	"cockpit2/utils/ViewUtils"
+	"cockpit2/data/dao/AbstractDao"
 	
-], function(AbstractDao, ViewUtils) {
+], function(AbstractDao) {
 	"use strict";
 
 	var dao = null;
@@ -10,7 +9,7 @@ sap.ui.define([
 	return {
 		getInstance: function() {
 			if (!dao) {
-				dao = AbstractDao.getInstance("Content");
+				dao = AbstractDao.getInstance("Books");
 			}
 			return {
 				list: function() {
