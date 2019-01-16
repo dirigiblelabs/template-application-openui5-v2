@@ -69,22 +69,32 @@
 					"target": "home"
 				},
 				{
+					"pattern": "Books",
+					"name": "Books",
+					"target": "Books"
+				},
+				{
+					"pattern": "Categories",
+					"name": "Categories",
+					"target": "Categories"
+				},
+				{
+					"pattern": "Stores",
+					"name": "Stores",
+					"target": "Stores"
+				},
+				{
+					"pattern": "Currencies",
+					"name": "Currencies",
+					"target": "Currencies"
+				},
+				{
 					"pattern": "MasterSettings",
 					"name": "masterSettings",
 					"target": [
 						"detailSettings",
 						"masterSettings"
 					]
-				},
-				{
-					"pattern": "SystemSettings",
-					"name": "systemSettings",
-					"target": "detailSettings"
-				},
-				{
-					"pattern": "Statistics",
-					"name": "statistics",
-					"target": "statistics"
 				}
 			],
 			"targets": {
@@ -92,27 +102,21 @@
 					"viewId": "home",
 					"viewName": "Home"
 				},
-				"appSettings": {
-					"viewId": "appSettings",
-					"viewName": "settings.AppSettings"
+				"Books": {
+					"viewId": "books",
+					"viewName": "Books"
 				},
-				"masterSettings": {
-					"viewId": "masterSettings",
-					"viewName": "settings.MasterSettings",
-					"controlId": "appSettings",
-					"controlAggregation": "masterPages",
-					"parent": "appSettings"
+				"Categories": {
+					"viewId": "categories",
+					"viewName": "Categories"
 				},
-				"detailSettings": {
-					"viewId": "detailSettings",
-					"viewName": "settings.DetailSettings",
-					"controlId": "appSettings",
-					"controlAggregation": "detailPages",
-					"parent": "appSettings"
+				"Stores": {
+					"viewId": "stores",
+					"viewName": "Stores"
 				},
-				"statistics": {
-					"viewId": "statistics",
-					"viewName": "Statistics"
+				"Currencies": {
+					"viewId": "currencies",
+					"viewName": "Currencies"
 				}
 			}
 		}
