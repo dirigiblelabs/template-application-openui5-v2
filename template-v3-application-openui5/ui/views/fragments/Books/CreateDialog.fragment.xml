@@ -1,0 +1,59 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog
+		title="Create Dialog"
+		class="sapUiPopupWithPadding"
+		contentWidth="40%">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:Form editable="true">
+					<f:title>
+						<core:Title text="Boooks" />
+					</f:title>
+					<f:layout>
+						<f:ResponsiveGridLayout/>
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Title">
+									<f:fields><Input value="{SelectedBook>/Title}"/></f:fields>
+								</f:FormElement>
+								<f:FormElement label="Category">
+									<f:fields><Input value="{SelectedBook>/Category}"/></f:fields>
+								</f:FormElement>
+								<f:FormElement label="ISBN">
+									<f:fields><Input value="{SelectedBook>/ISBN}"/></f:fields>
+								</f:FormElement>
+								<f:FormElement label="Pages">
+									<f:fields><Input value="{SelectedBook>/Pages}"/></f:fields>
+								</f:FormElement>
+								<f:FormElement label="Price">
+									<f:fields><Input value="{SelectedBook>/Price}"/></f:fields>
+								</f:FormElement>
+								<f:FormElement label="Currency">
+									<f:fields>
+										<Select selectedKey="{SelectedBook>/Currency}">
+											<items>
+												<core:Item text="England" key="England"/>
+												<core:Item text="Germany" key="Germany"/>
+												<core:Item text="USA" key="USA"/>
+											</items>
+										</Select>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</VBox>
+		</content>
+		<buttons>
+			<Button text="Save" press="onClosePressed" />
+			<Button text="Close" press="onClosePressed" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

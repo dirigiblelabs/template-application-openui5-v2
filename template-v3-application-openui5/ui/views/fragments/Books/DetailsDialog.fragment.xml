@@ -1,0 +1,51 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog
+		title="Overview Dialog"
+		class="sapUiPopupWithPadding"
+		contentWidth="40%">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:Form id="FormDisplay354"
+					editable="false">
+					<f:title>
+						<core:Title text="Details" />
+					</f:title>
+					<f:layout>
+						<f:ResponsiveGridLayout/>
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Title">
+									<f:fields><Text text="{SelectedBook>/Title}"/></f:fields>
+								</f:FormElement>
+								<f:FormElement label="Category">
+									<f:fields><Text text="{SelectedBook>/Category}"/></f:fields>
+								</f:FormElement>
+								<f:FormElement label="ISBN">
+									<f:fields><Text text="{SelectedBook>/ISBN}"/></f:fields>
+								</f:FormElement>
+								<f:FormElement label="Pages">
+									<f:fields><Text text="{SelectedBook>/Pages}"/></f:fields>
+								</f:FormElement>
+								<f:FormElement label="Price">
+									<f:fields><Text text="{SelectedBook>/Price}"/></f:fields>
+								</f:FormElement>
+								<f:FormElement label="Currency">
+									<f:fields><Text text="{SelectedBook>/Currency}"/></f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</VBox>
+		</content>
+		<buttons>
+			<Button text="Close" press="onClosePressed" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

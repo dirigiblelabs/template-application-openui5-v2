@@ -1,23 +1,47 @@
 <mvc:View
-	height="100%"
 	controllerName="cockpit2.controllers.Books"
+	xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
-	<Page
-		showHeader="false"
-		enableScrolling="false" >
-		<TileContainer
-			id="container"
-			tileDelete="handleTileDelete"
-			tiles="{Books>/}">
-			<StandardTile
-				icon="{Books>icon}"
-				type="{Books>type}"
-				number="{Books>number}"
-				numberUnit="{Books>numberUnit}"
-				title="{Books>title}"
-				info="{Books>info}"
-				infoState="{Books>infoState}" />
-		</TileContainer>
-	</Page>
+	<Table id="table" items="{path: 'Books>/'}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Books" level="H2"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://add" type="Emphasized" text="New" press="onItemCreatePressed"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column hAlign="Center">
+				<Text text="Title"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Category"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="ISBN"/>
+			</Column>
+			<Column hAlign="End">
+				<Text text="Pages"/>
+			</Column>
+			<Column hAlign="End">
+				<Text text="Price"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Currency"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" type="Detail" detailPress="onItemDetailsPressed" press="onItemDetailsPressed">
+				<cells>
+					<Text text="{Books>Title}" wrapping="false"/>
+					<Text text="{Books>Category}" wrapping="false"/>
+					<Text text="{Books>ISBN}"/>
+					<ObjectNumber number="{Books>Pages}"/>
+					<ObjectNumber number="{Books>Price}"/>
+					<Text text="{Books>Currency}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
 </mvc:View>
